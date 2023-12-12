@@ -1,6 +1,6 @@
 ---
 title: Homework 7 - Creating a resume database
-author: (your name goes here!)
+author: Miles Fagan
 date: last-modified
 format:
     html:
@@ -10,11 +10,9 @@ format:
         code-copy: true
 ---
 
-(include a brief description of what is in this document)
+This document is a database and breakdown of said database created as part of homework 7 for VCU Database Theory.
 
-(Please clean up any comments that I included.  This is a scaffold document.)
-
-GITHUB URL:  <your URL goes here!>
+GITHUB URL:  https://github.com/cmsc-vcu/cmsc508-fa2023-hw8-mfagan01
 
 ```{python}
 #| eval: true
@@ -28,7 +26,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.exc import OperationalError, ProgrammingError
 from IPython.display import display, Markdown
 ```
-```{python}
+```{python} 
 #| eval: true
 #| echo: false
 
@@ -92,11 +90,13 @@ except Exception as e:
 
 ## Overview and description
 
-(briefly describe the project and the database)
+This is a database of customer orders and sales. It contains customer names and IDs, as well as delivery Adresses.
 
 ## Crows-foot diagram
-
-(add a description of the diagram and what the reader is seeing.)
+ 
+This diagram is showing the relationship between the customer, order, and delivery Address, with a one to many customer places order, and one to one customer uses delivery address.
+Customer has fields ID, First name/ last name. 
+Delivery ID has Field ID.
 
 ```{mermaid}
 %%| echo: false
