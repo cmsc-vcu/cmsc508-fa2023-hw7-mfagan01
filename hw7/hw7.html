@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miles Fagan">
-<meta name="dcterms.date" content="2023-12-01">
+<meta name="dcterms.date" content="2023-12-12">
 
 <title>Homework 7 - Creating a resume database</title>
 <style>
@@ -3363,7 +3363,7 @@ z-index: 1000;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 1, 2023</p>
+      <p class="date">December 12, 2023</p>
     </div>
   </div>
   
@@ -3375,6 +3375,14 @@ z-index: 1000;
 
 <p>This document is a database and breakdown of said database created as part of homework 7 for VCU Database Theory.</p>
 <p>GITHUB URL: https://github.com/cmsc-vcu/cmsc508-fa2023-hw8-mfagan01</p>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>Database/SQL Error:
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_faganmc&#39;@&#39;%&#39; to database &#39;23FA_users_faganmc_HW7&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+</code></pre>
+</div>
+</div>
 <section id="overview-and-description" class="level2">
 <h2 class="anchored" data-anchor-id="overview-and-description">Overview and description</h2>
 <p>This is a database of customer orders and sales. It contains customer names and IDs, as well as delivery Adresses.</p>
@@ -3393,6 +3401,7 @@ z-index: 1000;
         int id
         string first_name
         string last_name
+        string middle_name
     }
     DELIVERY-ADDRESS {
         int id
@@ -3414,11 +3423,8 @@ z-index: 1000;
 <div class="cell-output cell-output-stdout">
 <pre><code>An error occurred:
 
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_users_faganmc.people&#39; doesn&#39;t exist&quot;)
-[SQL: 
-select * from people;
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_faganmc&#39;@&#39;%&#39; to database &#39;23FA_users_faganmc_HW7&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
 Ignoring and moving on.</code></pre>
 </div>
@@ -3459,20 +3465,17 @@ Ignoring and moving on.</code></pre>
 <h1>List skill names, tags, and descriptions ordered by name</h1>
 <p>(here a sample query)</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select * from people</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select * from people</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>An error occurred:
 
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_users_faganmc.people&#39; doesn&#39;t exist&quot;)
-[SQL: 
-select * from people
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_faganmc&#39;@&#39;%&#39; to database &#39;23FA_users_faganmc_HW7&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
 Ignoring and moving on.</code></pre>
 </div>
